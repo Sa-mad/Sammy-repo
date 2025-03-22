@@ -10,7 +10,7 @@ This folder contains my personal learning projects and hands-on experiments usin
 
 ---
 
-## Example SPL queries:
+## Example SPL queries-
 
    1.  **Search failed logins**
 ```spl
