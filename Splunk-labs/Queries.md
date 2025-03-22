@@ -17,18 +17,18 @@ This folder contains my personal learning projects and hands-on experiments usin
 index=main sourcetype=linux_secure "Failed password" 
 | stats count by user, src, host
 
-###2. **Find top 10 IP addresses accessing the system**
+### 2. **Find top 10 IP addresses accessing the system**
 ```sp2
 index=main sourcetype=apache:access 
 | top limit=10 clientip
 
-###3   **Detect multiple failed login attempts from the same IP**
+### 3   **Detect multiple failed login attempts from the same IP**
 ```sp3 
 index=main sourcetype=linux_secure "Failed password" 
 | stats count by src_ip 
 | where count > 5
 
-###4   **Search for suspicious PowerShell commands**
+### 4   **Search for suspicious PowerShell commands**
 ```sp4
 index=windows sourcetype=WinEventLog:Security (CommandLine="*Invoke-Expression*" OR CommandLine="*IEX*")
 | stats count by user, host
